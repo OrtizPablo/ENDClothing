@@ -102,13 +102,8 @@
 		85F840EB267011CD00DD6A8A /* ENDClothing */ = {
 			isa = PBXGroup;
 			children = (
-				85F840EC267011CD00DD6A8A /* AppDelegate.swift */,
-				85F840EE267011CD00DD6A8A /* SceneDelegate.swift */,
-				85F840F0267011CD00DD6A8A /* ViewController.swift */,
-				85F840F2267011CD00DD6A8A /* Main.storyboard */,
-				85F840F5267011CE00DD6A8A /* Assets.xcassets */,
-				85F840F7267011CE00DD6A8A /* LaunchScreen.storyboard */,
-				85F840FA267011CE00DD6A8A /* Info.plist */,
+				85F8411F267012D300DD6A8A /* Modules */,
+				85F8411E267012C600DD6A8A /* Main Files */,
 			);
 			path = ENDClothing;
 			sourceTree = "<group>";
@@ -129,6 +124,27 @@
 				85F84110267011CE00DD6A8A /* Info.plist */,
 			);
 			path = ENDClothingUITests;
+			sourceTree = "<group>";
+		};
+		85F8411E267012C600DD6A8A /* Main Files */ = {
+			isa = PBXGroup;
+			children = (
+				85F840EC267011CD00DD6A8A /* AppDelegate.swift */,
+				85F840EE267011CD00DD6A8A /* SceneDelegate.swift */,
+				85F840F2267011CD00DD6A8A /* Main.storyboard */,
+				85F840F5267011CE00DD6A8A /* Assets.xcassets */,
+				85F840F7267011CE00DD6A8A /* LaunchScreen.storyboard */,
+				85F840FA267011CE00DD6A8A /* Info.plist */,
+			);
+			path = "Main Files";
+			sourceTree = "<group>";
+		};
+		85F8411F267012D300DD6A8A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				85F840F0267011CD00DD6A8A /* ViewController.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,7 +458,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UWWP6897T2;
-				INFOPLIST_FILE = ENDClothing/Info.plist;
+				INFOPLIST_FILE = "ENDClothing/Main Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,7 +477,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UWWP6897T2;
-				INFOPLIST_FILE = ENDClothing/Info.plist;
+				INFOPLIST_FILE = "ENDClothing/Main Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
