@@ -12,13 +12,14 @@
 		85367460267689D100B18BC2 /* CatalogViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8536745F267689D100B18BC2 /* CatalogViewCell.swift */; };
 		853674502674C5B800B18BC2 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8536744F2674C5B800B18BC2 /* ProductRepository.swift */; };
 		853674532674C5DC00B18BC2 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853674522674C5DC00B18BC2 /* Product.swift */; };
+		853674552674C6BE00B18BC2 /* CatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853674542674C6BE00B18BC2 /* CatalogViewModel.swift */; };
 		85C312022672913500D12009 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C312012672913500D12009 /* NetworkManager.swift */; };
 		85F840ED267011CD00DD6A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F840EC267011CD00DD6A8A /* AppDelegate.swift */; };
 		85F840EF267011CD00DD6A8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F840EE267011CD00DD6A8A /* SceneDelegate.swift */; };
 		85F840F1267011CD00DD6A8A /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F840F0267011CD00DD6A8A /* CatalogViewController.swift */; };
 		85F840F6267011CE00DD6A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F840F5267011CE00DD6A8A /* Assets.xcassets */; };
 		85F840F9267011CE00DD6A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F840F7267011CE00DD6A8A /* LaunchScreen.storyboard */; };
-		85F84104267011CE00DD6A8A /* ENDClothingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F84103267011CE00DD6A8A /* ENDClothingTests.swift */; };
+		85F84104267011CE00DD6A8A /* CatalogViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F84103267011CE00DD6A8A /* CatalogViewModelTests.swift */; };
 		85F8410F267011CE00DD6A8A /* ENDClothingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F8410E267011CE00DD6A8A /* ENDClothingUITests.swift */; };
 		85F8411D2670123100DD6A8A /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 85F8411C2670123100DD6A8A /* Readme.txt */; };
 		85F8412526701CE000DD6A8A /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F8412426701CE000DD6A8A /* UIView+Helpers.swift */; };
@@ -52,6 +53,7 @@
 		8536745F267689D100B18BC2 /* CatalogViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewCell.swift; sourceTree = "<group>"; };
 		8536744F2674C5B800B18BC2 /* ProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRepository.swift; sourceTree = "<group>"; };
 		853674522674C5DC00B18BC2 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		853674542674C6BE00B18BC2 /* CatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModel.swift; sourceTree = "<group>"; };
 		85C312012672913500D12009 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		85F840E9267011CD00DD6A8A /* ENDClothing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ENDClothing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F840EC267011CD00DD6A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +63,7 @@
 		85F840F8267011CE00DD6A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85F840FA267011CE00DD6A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85F840FF267011CE00DD6A8A /* ENDClothingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ENDClothingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85F84103267011CE00DD6A8A /* ENDClothingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENDClothingTests.swift; sourceTree = "<group>"; };
+		85F84103267011CE00DD6A8A /* CatalogViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewModelTests.swift; sourceTree = "<group>"; };
 		85F84105267011CE00DD6A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85F8410A267011CE00DD6A8A /* ENDClothingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ENDClothingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F8410E267011CE00DD6A8A /* ENDClothingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENDClothingUITests.swift; sourceTree = "<group>"; };
@@ -195,7 +197,7 @@
 		85F84102267011CE00DD6A8A /* ENDClothingTests */ = {
 			isa = PBXGroup;
 			children = (
-				85F84103267011CE00DD6A8A /* ENDClothingTests.swift */,
+				85F84103267011CE00DD6A8A /* CatalogViewModelTests.swift */,
 				85F84105267011CE00DD6A8A /* Info.plist */,
 			);
 			path = ENDClothingTests;
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				8536745E267689C100B18BC2 /* Views */,
+				853674542674C6BE00B18BC2 /* CatalogViewModel.swift */,
 				85F840F0267011CD00DD6A8A /* CatalogViewController.swift */,
 			);
 			path = Modules;
@@ -477,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853674552674C6BE00B18BC2 /* CatalogViewModel.swift in Sources */,
 				85F840F1267011CD00DD6A8A /* CatalogViewController.swift in Sources */,
 				85F840ED267011CD00DD6A8A /* AppDelegate.swift in Sources */,
 				85C312022672913500D12009 /* NetworkManager.swift in Sources */,
@@ -492,7 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85F84104267011CE00DD6A8A /* ENDClothingTests.swift in Sources */,
+				85F84104267011CE00DD6A8A /* CatalogViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
