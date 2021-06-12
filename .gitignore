@@ -1,0 +1,5 @@
+# Xcode
+
+xcuserdata/
+.DS_Store
+*.xcuserstate
