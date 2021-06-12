@@ -58,6 +58,3 @@ extension CatalogViewController: UICollectionViewDataSource {
         return cell
     }
 }
-
-
-
