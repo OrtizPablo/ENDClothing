@@ -3,20 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2AEDD2C679C281A234F9B196 /* Pods_ENDClothing_ENDClothingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3245C3A63193D47B232CD3 /* Pods_ENDClothing_ENDClothingUITests.framework */; };
 		2D7C82175DF8F6ABF4A1BD22 /* Pods_ENDClothing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D716FBAE8CA8D6A4C79BB8F /* Pods_ENDClothing.framework */; };
+		85367460267689D100B18BC2 /* CatalogViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8536745F267689D100B18BC2 /* CatalogViewCell.swift */; };
 		85F840ED267011CD00DD6A8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F840EC267011CD00DD6A8A /* AppDelegate.swift */; };
 		85F840EF267011CD00DD6A8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F840EE267011CD00DD6A8A /* SceneDelegate.swift */; };
-		85F840F1267011CD00DD6A8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F840F0267011CD00DD6A8A /* ViewController.swift */; };
+		85F840F1267011CD00DD6A8A /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F840F0267011CD00DD6A8A /* CatalogViewController.swift */; };
 		85F840F6267011CE00DD6A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F840F5267011CE00DD6A8A /* Assets.xcassets */; };
 		85F840F9267011CE00DD6A8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F840F7267011CE00DD6A8A /* LaunchScreen.storyboard */; };
 		85F84104267011CE00DD6A8A /* ENDClothingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F84103267011CE00DD6A8A /* ENDClothingTests.swift */; };
 		85F8410F267011CE00DD6A8A /* ENDClothingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F8410E267011CE00DD6A8A /* ENDClothingUITests.swift */; };
 		85F8411D2670123100DD6A8A /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 85F8411C2670123100DD6A8A /* Readme.txt */; };
+		85F8412526701CE000DD6A8A /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F8412426701CE000DD6A8A /* UIView+Helpers.swift */; };
 		8F3A07AA7A417CF89E0C88BA /* Pods_ENDClothingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D0F3BA8574660878040B9A6 /* Pods_ENDClothingTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,10 +46,11 @@
 		5D716FBAE8CA8D6A4C79BB8F /* Pods_ENDClothing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ENDClothing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DDC4F0A1E2ED2E8EA967C6 /* Pods-ENDClothing-ENDClothingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ENDClothing-ENDClothingUITests.release.xcconfig"; path = "Target Support Files/Pods-ENDClothing-ENDClothingUITests/Pods-ENDClothing-ENDClothingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6F3245C3A63193D47B232CD3 /* Pods_ENDClothing_ENDClothingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ENDClothing_ENDClothingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8536745F267689D100B18BC2 /* CatalogViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewCell.swift; sourceTree = "<group>"; };
 		85F840E9267011CD00DD6A8A /* ENDClothing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ENDClothing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F840EC267011CD00DD6A8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85F840EE267011CD00DD6A8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		85F840F0267011CD00DD6A8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		85F840F0267011CD00DD6A8A /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		85F840F5267011CE00DD6A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85F840F8267011CE00DD6A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85F840FA267011CE00DD6A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		85F8410E267011CE00DD6A8A /* ENDClothingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENDClothingUITests.swift; sourceTree = "<group>"; };
 		85F84110267011CE00DD6A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85F8411C2670123100DD6A8A /* Readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		85F8412426701CE000DD6A8A /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		9700B4E93C5A0AA749EA9AFA /* Pods-ENDClothingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ENDClothingTests.debug.xcconfig"; path = "Target Support Files/Pods-ENDClothingTests/Pods-ENDClothingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8BF49DF5837DB28A7D5F25C /* Pods-ENDClothing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ENDClothing.release.xcconfig"; path = "Target Support Files/Pods-ENDClothing/Pods-ENDClothing.release.xcconfig"; sourceTree = "<group>"; };
 		B9D8A28D0E5034910477D8AF /* Pods-ENDClothing-ENDClothingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ENDClothing-ENDClothingUITests.debug.xcconfig"; path = "Target Support Files/Pods-ENDClothing-ENDClothingUITests/Pods-ENDClothing-ENDClothingUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +105,6 @@
 				9700B4E93C5A0AA749EA9AFA /* Pods-ENDClothingTests.debug.xcconfig */,
 				311B3E6A79D851E771B7BDD4 /* Pods-ENDClothingTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -113,6 +116,14 @@
 				4D0F3BA8574660878040B9A6 /* Pods_ENDClothingTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8536745E267689C100B18BC2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8536745F267689D100B18BC2 /* CatalogViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		85F840E0267011CD00DD6A8A = {
@@ -141,6 +152,7 @@
 		85F840EB267011CD00DD6A8A /* ENDClothing */ = {
 			isa = PBXGroup;
 			children = (
+				85F8412326701CD400DD6A8A /* Helpers */,
 				85F8411F267012D300DD6A8A /* Modules */,
 				85F8411E267012C600DD6A8A /* Main Files */,
 			);
@@ -180,9 +192,18 @@
 		85F8411F267012D300DD6A8A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				85F840F0267011CD00DD6A8A /* ViewController.swift */,
+				8536745E267689C100B18BC2 /* Views */,
+				85F840F0267011CD00DD6A8A /* CatalogViewController.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		85F8412326701CD400DD6A8A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				85F8412426701CE000DD6A8A /* UIView+Helpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,9 +444,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85F840F1267011CD00DD6A8A /* ViewController.swift in Sources */,
+				85F840F1267011CD00DD6A8A /* CatalogViewController.swift in Sources */,
 				85F840ED267011CD00DD6A8A /* AppDelegate.swift in Sources */,
+				85F8412526701CE000DD6A8A /* UIView+Helpers.swift in Sources */,
 				85F840EF267011CD00DD6A8A /* SceneDelegate.swift in Sources */,
+				85367460267689D100B18BC2 /* CatalogViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
