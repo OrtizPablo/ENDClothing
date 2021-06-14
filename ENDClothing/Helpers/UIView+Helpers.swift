@@ -19,4 +19,11 @@ extension UIView {
             make.bottom.equalToSuperview()
         }
     }
+    
+    func constraintToSize(_ size: CGSize) {
+        snp.makeConstraints { make in
+            make.height.equalTo(size.height)
+            make.width.equalTo(size.width)
+        }
+    }
 }
