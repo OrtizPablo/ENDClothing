@@ -12,6 +12,7 @@ import Combine
 final class CatalogViewModelTests: XCTestCase {
     
     private var sutSpy: CatalogViewModelSpy!
+    private var coordinator: MockCatalogCoordinator!
     
     func testLoadProductsSuccessfully() {
         _ = makeSUT(productRepository: MockProductRepository())
@@ -26,6 +27,15 @@ final class CatalogViewModelTests: XCTestCase {
         _ = makeSUT(productRepository: productsRepo)
         XCTAssertEqual(sutSpy.products.count, 0)
     }
+    
+    func testProductTapped() {
+        let viewModel = makeSUT(productRepository: MockProductRepository())
+        XCTAssertNil(coordinator.product)
+        viewModel.onProductTapped.send(0)
+        assertProductInfo(product: coordinator.product!, name: "T-shirt", price: "£50", imagePath: "https://media.endclothing.com/media/f_auto,q_auto,w_760,h_760/prodmedia/media/catalog/product/2/6/26-03-2018_gosha_rubchinskiyxadidas_copaprimeknitboostmidsneaker_yellow_g012sh12-220_ka_1.jpg")
+        viewModel.onProductTapped.send(1)
+        assertProductInfo(product: coordinator.product!, name: "Shirt", price: "£100", imagePath: "https://media.endclothing.com/media/f_auto,q_auto,w_760,h_760/prodmedia/media/catalog/product/2/6/26-03-2018_gosha_rubchinskiyxadidas_copaprimeknitboostmidsneaker_yellow_g012sh12-220_ka_1.jpg")
+    }
 }
 
 // MARK: - Private helpers
@@ -34,7 +44,8 @@ extension CatalogViewModelTests {
     
     private func makeSUT(productRepository: ProductRepositoryProtocol) -> CatalogViewModel {
         sutSpy = CatalogViewModelSpy()
-        let sut = CatalogViewModel(productRepository: productRepository)
+        coordinator = MockCatalogCoordinator()
+        let sut = CatalogViewModel(coordinator: coordinator, productRepository: productRepository)
         sutSpy.attach(to: sut)
         return sut
     }
@@ -93,5 +104,13 @@ private final class MockProductRepository: ProductRepositoryProtocol {
             guard let products = products else { return }
             completion(.success(products))
         }
+    }
+}
+
+private final class MockCatalogCoordinator: CatalogCoordinatorProtocol {
+    
+    var product: Product?
+    func onContinue(product: Product) {
+        self.product = product
     }
 }

@@ -42,6 +42,7 @@ final class CatalogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = viewModel.navTitle
         view.backgroundColor = .white
         collectionView.pin(to: view)
         bindViewModel()
@@ -66,8 +67,7 @@ extension CatalogViewController {
 extension CatalogViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: push to new product details screen
-        print("Push to product details screen")
+        viewModel.onProductTapped.send(indexPath.row)
     }
 }
 

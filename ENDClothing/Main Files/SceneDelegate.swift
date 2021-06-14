@@ -10,15 +10,19 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private var coordinator: MainCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let window = UIWindow(windowScene: windowScene)
-        let viewModel = CatalogViewModel()
-        window.rootViewController = CatalogViewController(viewModel: viewModel)
-        window.makeKeyAndVisible()
-        self.window = window
+        let navigationController = UINavigationController()
+        navigationController.navigationBar.barTintColor = .white
+        coordinator = MainCoordinator(navigationController: navigationController)
+        coordinator?.start()
+        
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}
