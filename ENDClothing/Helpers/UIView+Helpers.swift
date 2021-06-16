@@ -9,14 +9,26 @@ import UIKit
 import SnapKit
 
 extension UIView {
+    
+    func pin(to view: UIView, padding: CGFloat = 0) {
+        pin(to: view,
+            leadingConstant: padding,
+            topConstant: padding,
+            trailingConstant: padding,
+            bottomConstant: padding)
+    }
 
-    func pin(to view: UIView) {
+    func pin(to view: UIView,
+             leadingConstant: CGFloat = 0,
+             topConstant: CGFloat = 0,
+             trailingConstant: CGFloat = 0,
+             bottomConstant: CGFloat = 0) {
         view.addSubview(self)
         snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.top.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.leading.equalTo(leadingConstant)
+            make.top.equalTo(topConstant)
+            make.trailing.equalTo(-trailingConstant)
+            make.bottom.equalTo(-bottomConstant)
         }
     }
     
@@ -24,6 +36,12 @@ extension UIView {
         snp.makeConstraints { make in
             make.height.equalTo(size.height)
             make.width.equalTo(size.width)
+        }
+    }
+    
+    func constraintToHeight(_ height: CGFloat) {
+        snp.makeConstraints { make in
+            make.height.equalTo(height).priority(.high)
         }
     }
 }
