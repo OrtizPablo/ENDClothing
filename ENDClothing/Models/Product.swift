@@ -5,6 +5,8 @@
 //  Created by Pablo Ortiz on 12/06/2021.
 //
 
+import UIKit
+
 struct Product: Decodable {
     let name: String
     let price: String

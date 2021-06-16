@@ -32,11 +32,11 @@ final class ProductViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.navTitle, "T-shirt")
         XCTAssertEqual(viewModel.cells.count, 3)
         // First cell
-        guard case .imageCell(let image, let titles) = viewModel.cells[0] else {
+        guard case .imageCell(let imagePath, let titles) = viewModel.cells[0] else {
             XCTFail("incorrect cell")
             return
         }
-        XCTAssertEqual(image, UIImage(named: "tshirtPlaceholder"))
+        XCTAssertEqual(imagePath, "https://media.endclothing.com/media/f_auto,q_auto,w_760,h_760/prodmedia/media/catalog/product/2/6/26-03-2018_gosha_rubchinskiyxadidas_copaprimeknitboostmidsneaker_yellow_g012sh12-220_ka_1.jpg")
         XCTAssertEqual(titles, [["UK 4", "UK 5", "UK 6"], ["UK 7", "UK 8", "UK 9"], ["UK 10", "UK 11", "UK 12"]])
         
         // Second cell

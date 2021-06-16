@@ -13,7 +13,6 @@ final class ProductViewCell: UITableViewCell {
     
     private lazy var productImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "tshirtPlaceholder")
         imageView.constraintToHeight(300)
         return imageView
     }()
@@ -55,8 +54,8 @@ final class ProductViewCell: UITableViewCell {
     
     // MARK: - Public methods
     
-    func setupCell(image: UIImage?, titles: [[String]]) {
-        productImageView.image = image
+    func setupCell(imagePath: String, titles: [[String]]) {
+        productImageView.loadImage(urlString: imagePath, placeholderImageName: "tshirtPlaceholder")
         createButtonSizeStack(titles: titles)
     }
 }

@@ -11,11 +11,7 @@ final class CatalogViewCell: UICollectionViewCell {
     
     // MARK: - Properties
         
-    private lazy var imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "tshirtPlaceholder")
-        return imageView
-    }()
+    private lazy var imageView = UIImageView()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -72,7 +68,8 @@ final class CatalogViewCell: UICollectionViewCell {
     
     // MARK: - Public functions
     
-    func setupView(title: String, subtitle: String = "Yellow", price: String) {
+    func setupView(imagePath: String, title: String, subtitle: String = "Yellow", price: String) {
+        imageView.loadImage(urlString: imagePath, placeholderImageName: "tshirtPlaceholder")
         titleLabel.text = title
         subtitleLabel.text = subtitle
         priceLabel.text = price

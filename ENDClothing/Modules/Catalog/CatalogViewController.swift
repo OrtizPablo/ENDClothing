@@ -84,7 +84,8 @@ extension CatalogViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatalogViewCell", for: indexPath) as? CatalogViewCell else {
             return UICollectionViewCell()
         }
-        cell.setupView(title: viewModel.products.value[indexPath.row].name,
+        cell.setupView(imagePath: viewModel.products.value[indexPath.row].imagePath,
+                       title: viewModel.products.value[indexPath.row].name,
                        price: viewModel.products.value[indexPath.row].price)
         return cell
     }

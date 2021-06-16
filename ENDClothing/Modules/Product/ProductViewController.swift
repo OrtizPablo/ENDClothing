@@ -54,11 +54,11 @@ extension ProductViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch viewModel.cells[indexPath.row] {
-        case .imageCell(let image, let titles):
+        case .imageCell(let imagePath, let titles):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductViewCell") as? ProductViewCell else {
                 return UITableViewCell()
             }
-            cell.setupCell(image: image, titles: titles)
+            cell.setupCell(imagePath: imagePath, titles: titles)
             cell.selectionStyle = .none
             cell.contentView.isUserInteractionEnabled = false
             return cell
