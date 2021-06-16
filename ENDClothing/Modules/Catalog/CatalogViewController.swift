@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class CatalogViewController: UIViewController {
+final class CatalogViewController: BaseViewController {
 
     // MARK: - Properties
     
@@ -46,6 +46,7 @@ final class CatalogViewController: UIViewController {
         view.backgroundColor = .white
         collectionView.pin(to: view)
         bindViewModel()
+        viewModel.onViewReady.send(())
     }
 }
 
@@ -54,6 +55,12 @@ final class CatalogViewController: UIViewController {
 extension CatalogViewController {
     
     private func bindViewModel() {
+        viewModel.isLoading.sink { isLoading in
+            DispatchQueue.main.async { [weak self] in
+                isLoading ? self?.showLoadingIndicator() : self?.stopLoadingIndicator()
+            }
+        }.store(in: &cancellables)
+        
         viewModel.products.sink { _ in
             DispatchQueue.main.async { [weak self] in
                 self?.collectionView.reloadData()

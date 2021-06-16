@@ -36,6 +36,13 @@ final class CatalogViewModelTests: XCTestCase {
         viewModel.onProductTapped.send(1)
         assertProductInfo(product: coordinator.product!, name: "Shirt", price: "£100", imagePath: "https://media.endclothing.com/media/f_auto,q_auto,w_760,h_760/prodmedia/media/catalog/product/2/6/26-03-2018_gosha_rubchinskiyxadidas_copaprimeknitboostmidsneaker_yellow_g012sh12-220_ka_1.jpg")
     }
+    
+    func testLoadingIndicatorIsShown() {
+        _ = makeSUT(productRepository: MockProductRepository())
+        XCTAssertEqual(sutSpy.isLoadingValues.count, 2)
+        XCTAssertTrue(sutSpy.isLoadingValues[0])
+        XCTAssertFalse(sutSpy.isLoadingValues[1])
+    }
 }
 
 // MARK: - Private helpers
@@ -47,6 +54,7 @@ extension CatalogViewModelTests {
         coordinator = MockCatalogCoordinator()
         let sut = CatalogViewModel(coordinator: coordinator, productRepository: productRepository)
         sutSpy.attach(to: sut)
+        sut.onViewReady.send(())
         return sut
     }
     
@@ -61,10 +69,15 @@ extension CatalogViewModelTests {
 
 private final class CatalogViewModelSpy {
     
+    var isLoadingValues = [Bool]()
     var products = [Product]()
     private var cancellables = Set<AnyCancellable>()
     
     func attach(to sut: CatalogViewModel) {
+        sut.isLoading.sink { [weak self] isLoading in
+            self?.isLoadingValues.append(isLoading)
+        }.store(in: &cancellables)
+        
         sut.products
             .assign(to: \.products, on: self)
             .store(in: &cancellables)
