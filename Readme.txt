@@ -12,3 +12,9 @@ The architecture chosen for the app was MVVM-C. The elements of this arquitectur
     - Coordinator(C): element which pushes/presents/pops/dismiss views on the app.
 
 The project uses Combine framework to bind the data connecting the view with the view model.
+
+As this app is a prototype, I want to enumerate future things to improve the app itself:
+    - Improve of NetworkManager to handle several types of data requests.
+    - Add caching to Network manager.
+    - Create a set of fonts which the app will use.
+    - Add dark mode.
