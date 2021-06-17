@@ -19,6 +19,7 @@ final class ProductViewController: UIViewController {
         tableView.register(ProductViewCell.self, forCellReuseIdentifier: "ProductViewCell")
         tableView.register(ProductDescriptionViewCell.self, forCellReuseIdentifier: "ProductDescriptionViewCell")
         tableView.tableFooterView = UIView()
+        tableView.accessibilityIdentifier = "ProductTableView"
         return tableView
     }()
     

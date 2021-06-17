@@ -45,6 +45,7 @@ final class CatalogViewController: BaseViewController {
         title = viewModel.navTitle
         view.backgroundColor = .white
         collectionView.pin(to: view)
+        collectionView.accessibilityIdentifier = "CatalogCollectionView"
         placeholderView.delegate = self
         bindViewModel()
         viewModel.onViewReady.send(())
@@ -101,6 +102,7 @@ extension CatalogViewController: UICollectionViewDataSource {
         cell.setupView(imagePath: viewModel.products.value[indexPath.row].imagePath,
                        title: viewModel.products.value[indexPath.row].name,
                        price: viewModel.products.value[indexPath.row].price)
+        cell.accessibilityIdentifier = "CatalogViewCell\(indexPath.row)"
         return cell
     }
 }
