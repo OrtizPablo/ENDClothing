@@ -19,6 +19,7 @@ final class CatalogViewModelTests: XCTestCase {
         XCTAssertEqual(sutSpy.products.count, 2)
         assertProductInfo(product: sutSpy.products[0], name: "T-shirt", price: "£50", imagePath: "https://media.endclothing.com/media/f_auto,q_auto,w_760,h_760/prodmedia/media/catalog/product/2/6/26-03-2018_gosha_rubchinskiyxadidas_copaprimeknitboostmidsneaker_yellow_g012sh12-220_ka_1.jpg")
         assertProductInfo(product: sutSpy.products[1], name: "Shirt", price: "£100", imagePath: "https://media.endclothing.com/media/f_auto,q_auto,w_760,h_760/prodmedia/media/catalog/product/2/6/26-03-2018_gosha_rubchinskiyxadidas_copaprimeknitboostmidsneaker_yellow_g012sh12-220_ka_1.jpg")
+        XCTAssertFalse(sutSpy.showPlaceholder)
     }
     
     func testLoadProductsFailure() {
@@ -26,6 +27,7 @@ final class CatalogViewModelTests: XCTestCase {
         productsRepo.shouldFail = true
         _ = makeSUT(productRepository: productsRepo)
         XCTAssertEqual(sutSpy.products.count, 0)
+        XCTAssertTrue(sutSpy.showPlaceholder)
     }
     
     func testProductTapped() {
@@ -42,6 +44,18 @@ final class CatalogViewModelTests: XCTestCase {
         XCTAssertEqual(sutSpy.isLoadingValues.count, 2)
         XCTAssertTrue(sutSpy.isLoadingValues[0])
         XCTAssertFalse(sutSpy.isLoadingValues[1])
+    }
+    
+    func testRetryButton() {
+        let productsRepo = MockProductRepository()
+        productsRepo.shouldFail = true
+        let viewModel = makeSUT(productRepository: productsRepo)
+        XCTAssertEqual(sutSpy.products.count, 0)
+        XCTAssertTrue(sutSpy.showPlaceholder)
+        productsRepo.shouldFail = false
+        viewModel.retryTapped.send(())
+        XCTAssertEqual(sutSpy.products.count, 2)
+        XCTAssertFalse(sutSpy.showPlaceholder)
     }
 }
 
@@ -70,6 +84,7 @@ extension CatalogViewModelTests {
 private final class CatalogViewModelSpy {
     
     var isLoadingValues = [Bool]()
+    var showPlaceholder = false
     var products = [Product]()
     private var cancellables = Set<AnyCancellable>()
     
@@ -77,6 +92,10 @@ private final class CatalogViewModelSpy {
         sut.isLoading.sink { [weak self] isLoading in
             self?.isLoadingValues.append(isLoading)
         }.store(in: &cancellables)
+        
+        sut.showPlaceholder
+            .assign(to: \.showPlaceholder, on: self)
+            .store(in: &cancellables)
         
         sut.products
             .assign(to: \.products, on: self)

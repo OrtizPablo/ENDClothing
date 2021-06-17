@@ -45,6 +45,7 @@ final class CatalogViewController: BaseViewController {
         title = viewModel.navTitle
         view.backgroundColor = .white
         collectionView.pin(to: view)
+        placeholderView.delegate = self
         bindViewModel()
         viewModel.onViewReady.send(())
     }
@@ -58,6 +59,12 @@ extension CatalogViewController {
         viewModel.isLoading.sink { isLoading in
             DispatchQueue.main.async { [weak self] in
                 isLoading ? self?.showLoadingIndicator() : self?.stopLoadingIndicator()
+            }
+        }.store(in: &cancellables)
+        
+        viewModel.showPlaceholder.sink { isPlaceholderShown in
+            DispatchQueue.main.async { [weak self] in
+                isPlaceholderShown ? self?.showPlaceholder() : self?.hidePlaceholder()
             }
         }.store(in: &cancellables)
         
@@ -117,5 +124,14 @@ extension CatalogViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+// MARK: - PlaceholderViewDelegate
+
+extension CatalogViewController: PlaceholderViewDelegate {
+    
+    func onRetryTapped() {
+        viewModel.retryTapped.send(())
     }
 }

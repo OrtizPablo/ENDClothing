@@ -9,7 +9,10 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    // MARK: - Properties
+    
     private let loadingIndicator = UIActivityIndicatorView(style: .large)
+    private(set) var placeholderView = PlaceholderView()
 
     func showLoadingIndicator() {
         loadingIndicator.color = .red
@@ -21,5 +24,15 @@ class BaseViewController: UIViewController {
     func stopLoadingIndicator() {
         loadingIndicator.stopAnimating()
         loadingIndicator.removeFromSuperview()
+    }
+    
+    func showPlaceholder() {
+        view.addSubview(placeholderView)
+        placeholderView.pin(to: view)
+        view.bringSubviewToFront(placeholderView)
+    }
+
+    func hidePlaceholder() {
+        placeholderView.removeFromSuperview()
     }
 }

@@ -17,6 +17,8 @@ protocol CatalogViewModelProtocol {
     var products: CurrentValueSubject<[Product], Never> { get }
     var onViewReady: PassthroughSubject<Void, Never> { get }
     var onProductTapped: PassthroughSubject<Int, Never> { get }
+    var showPlaceholder: AnyPublisher<Bool, Never> { get }
+    var retryTapped: PassthroughSubject<Void, Never> { get }
 }
 
 final class CatalogViewModel: CatalogViewModelProtocol {
@@ -33,6 +35,11 @@ final class CatalogViewModel: CatalogViewModelProtocol {
     let products = CurrentValueSubject<[Product], Never>([])
     let onViewReady = PassthroughSubject<Void, Never>()
     let onProductTapped = PassthroughSubject<Int, Never>()
+    private let showPlaceholderSubject = PassthroughSubject<Bool, Never>()
+    var showPlaceholder: AnyPublisher<Bool, Never> {
+        showPlaceholderSubject.eraseToAnyPublisher()
+    }
+    let retryTapped = PassthroughSubject<Void, Never>()
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -60,8 +67,7 @@ extension CatalogViewModel {
             case .success(let products):
                 self?.products.value = products
             case .failure:
-                // TODO: show error on screen
-                break
+                self?.showPlaceholderSubject.send(true)
             }
         }
     }
@@ -75,6 +81,11 @@ extension CatalogViewModel {
             guard let self = self else { return }
             let product = self.products.value[index]
             self.coordinator?.onContinue(product: product)
+        }.store(in: &cancellables)
+        
+        retryTapped.sink { [weak self] in
+            self?.showPlaceholderSubject.send(false)
+            self?.getProducts()
         }.store(in: &cancellables)
     }
 }
